@@ -5,12 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Beatles</title>
+
+    <style>
+        /*Adapted from https://www.w3schools.com/css/css_pseudo_classes_interactive.asp 23.09.2026 */
+        /* unvisited link */
+        a:link {
+            color: rgb(28, 45, 196);
+        }
+
+        /* visited link */
+        a:visited {
+            color: rgb(209, 8, 182);
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: rgb(16, 207, 58);
+        }
+
+        /* selected link */
+        a:active {
+            color: rgb(230, 4, 4);
+        }
+
+        .skip {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip:focus {
+            position: static;
+            width: auto;
+            height: auto;
+        }
+               
+    </style>
+
 </head>
 
 <body style="background-color:rgba(248, 248, 255, 0.5);text-align: center;font-family: Arial, sans-serif;">
 
     <header>
-        <img src="images/beatleslogo.png" alt="The Beatles logo" width="200" height="200" title="The Beatles">
+        <a href="#main" class="skip">Skip to the main content</a>
+        /*https://www.w3schools.com/accessibility/accessibility_skip_links.php 23.09.2026*/
+
+        <img src="images/beatleslogo.png" alt="The Beatles" width="200" height="200" title="The Beatles">
         <hr>
 
         <h1 style="font-size:2.5rem;">The Beatles</h1>
@@ -23,7 +66,7 @@
     </header>
     <hr>
 
-    <main>
+    <main id="main">
         <h2>Band Members</h2>
         <img src="images/abbeyroadcrossingcartoon.png" alt="The Beatles band members" width="200" height="200"
             title="Abbey Road Zebra Crossing">
@@ -79,7 +122,7 @@
     </main>
 
     <footer>
-        <!-- Fails accessibility checks but keep in for testing -->
+        <!-- Fails accessibility check but keep in for testing -->
         <pre>
     <small> 
         Thanks for reading
