@@ -38,6 +38,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#members">Band Members</a></li>
                 <li><a href="#museum">Beatles Museum</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
             </ul>
         </nav>
 
@@ -80,7 +81,7 @@
 
             <hr>
 
-            <h2 id="museum" >The Liverpool Beatles Museum</h2>
+            <h2 id="museum">The Liverpool Beatles Museum</h2>
 
             <p>If you would like more information on The Beatles, why not visit the <b>Liverpool Beatles Museum</b></p>
             <img src="images/liverpoolbeatlesmuseum.png" alt="Liverpool Beatles Museum" width="200" height="200"
@@ -91,6 +92,59 @@
                 Museum Website</a>
             <p><em>Book tickets in advance, to avoid missing out!</em></p>
             <p><mark> Top tip:</mark> Don't forget to bring H<sub>2</sub>O if the weather is 15<sup>°</sup>C or more</p>
+
+            <hr>
+            <!--forms https://www.w3schools.com/html/html_forms.asp-->
+
+            <h2 id="newsletter"> Sign up to our newsletter</h2>
+
+            <!--leave action out for now action="/action_page.php" and target="_blank"  keep post as name and email are potentially PII-->
+            <form method="post" autocomplete="on">
+                <fieldset>
+                    <legend> Please enter your details:</legend> 
+
+
+                    <label for="firstname"> First Name:</label><br>
+                    <input type="text" id="firstname" name="firstname" size="30" placeholder="Enter your first name"
+                        required><br><br>
+
+                    <label for="lastname"> Last Name:</label><br>
+                    <input type="text" id="lastname" name="lastname" size="30" placeholder="Enter your last name"
+                        required><br><br>
+
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" size="50" placeholder="Enter your email"
+                        required><br><br>
+
+
+                    <fieldset>
+                        <legend> How did you hear about us?</legend>
+
+
+                        <input type="radio" id="facebook" name="hear_about_us" value="Facebook">
+                        <label for="facebook">Facebook</label><br>
+                        <input type="radio" id="tv" name="hear_about_us" value="Television">
+                        <label for="tv">Television</label><br>
+                        <input type="radio" id="radio" name="hear_about_us" value="Radio">
+                        <label for="radio">Radio</label><br>
+                        <input type="radio" id="other" name="hear_about_us" value="Other">
+                        <label for="other">Other</label><br><br>
+                    </fieldset><br><br>
+
+
+                    <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" value="Agree" required>
+                    <label for="terms_and_conditions"> I agree to the terms and conditions</label><br><br>
+
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+
+                </fieldset>
+
+
+            </form>
+
+
 
         </main>
 
