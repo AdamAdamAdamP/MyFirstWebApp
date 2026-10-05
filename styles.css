@@ -19,6 +19,48 @@
   padding: 0;
 }
 
+/*https://www.w3schools.com/Css/css_navbar_vertical.asp*/
+
+
+/*Display the nav items as blocks rather than text under each other*/
+li a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+/* Change the link and background color on hover */
+li a:hover {
+ 
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+
+li {
+ 
+  border-bottom: 1px solid #555555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Mobile first */
 .container > * {
   padding: 1rem;
@@ -27,6 +69,9 @@
 
 /*ref for @media - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
 /* Small devices (portrait tablets and large phones, 600px and up) */
+
+/*Removed as nav bar not great at the side for small devices
+
 @media (min-width: 600px) {
   .nav {
     grid-column: col-start / span 2;
@@ -40,6 +85,7 @@
     grid-column: col-start / span 12;
   }
 }
+  */
 
  /* Medium devices Upwards (landscape tablets, 768px and up) */
 @media (min-width: 768px) {
