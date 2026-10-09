@@ -55,6 +55,8 @@
                 Born: 9th October 1940<br>
                 Died: 8th December 1980<br>
                 Instruments: Vocals, guitar, keyboard, harmonica<br>
+
+
             </p>
 
             <h3>Paul McCartney</h3>
@@ -98,21 +100,27 @@
 
             <h2 id="newsletter"> Sign up to our newsletter</h2>
 
+            <p id="newsletter-discount"></p>
+            <!--p>You can call functions from events. Try the click me button to change form colour</p-->
+            
+            <button class="button" onclick="changeNewsletterText()">Why sign up to the Beatles newsletter?</button>
+
+
             <!--leave action out for now action="/action_page.php" and target="_blank"  keep post as name and email are potentially PII-->
-            <form method="post" autocomplete="on" class="fancy-details">
-                
+            <form id="form-newsletter" method="post" autocomplete="on" class="fancy-details">
+    
                     <h3> Please enter your details:</h3> 
 
 
                     <label for="firstname" > First Name:</label><br>
-                    <input type="text" id="firstname" name="firstname"  placeholder="Enter your first name" 
+                    <input type="text" id="firstname" name="firstname"  placeholder="e.g. John" 
                         required>
                     <label for="lastname"> Last Name:</label><br>
-                    <input type="text" id="lastname" name="lastname"  placeholder="Enter your last name"
+                    <input type="text" id="lastname" name="lastname"  placeholder="e.g. Lennon"
                         required>
 
                     <label for="email">Email Address:</label><br>
-                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                    <input type="email" id="email" name="email" placeholder="e.g. John@gmail.com"
                         required>
 
 
@@ -138,12 +146,12 @@
                     <input type="submit" value="Submit">
                     <input type="reset" value="Reset">
 
-               
+             
 
 
             </form>
 
-
+   <!--not needed yet     <p id="newsletter-signup-message"></p> -->
 
         </main>
 
@@ -162,6 +170,10 @@
         </footer>
 
     </div>
+
+
+<script src="myScript.js"></script>  
+<!-- REF https://www.w3schools.com/js/js_whereto.asp    if place script in <head> it runs before page content loads, when script in <body> it runs as page loads, making things faster for users-->
 
 </body>
 

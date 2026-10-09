@@ -127,6 +127,29 @@ li:last-child {
      color: rgb(230, 4, 4);
  }
 
+
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color:  rgb(16, 207, 58);
+ 
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
  .skip {
      position: absolute;
      left: -10000px;
@@ -167,6 +190,9 @@ li:last-child {
  }
 
 /*external stylesheet move body_ https://www.w3schools.com/css/css_howto.asp */
+
+
+
 
 /*Images https://www.w3schools.com/css/css_rwd_images.asp*/
  img {
