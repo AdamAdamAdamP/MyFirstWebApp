@@ -39,6 +39,7 @@
                 <li><a href="#members">Band Members</a></li>
                 <li><a href="#museum">Beatles Museum</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="#random-quotes">Random Quotes</a></li>
             </ul>
         </nav>
 
@@ -153,6 +154,65 @@
 
    <!--not needed yet     <p id="newsletter-signup-message"></p> -->
 
+<!--
+ <button class="button" onclick="apiTest()">
+    API Adams Testing
+</button>
+-->
+
+<!--Week 5.5 API
+
+<input placeholder="Name" id="name" />
+<button onclick="guessAge()">What's my age ?</button>
+<label id="result"></label>
+
+
+<script>
+async function guessAge() {
+var name = document.getElementById("name").value;
+
+const url = "https://api.agify.io/?name=" + name;
+
+const response = await fetch(url);
+
+const json = await response.json();
+
+document.getElementById("result").innerHTML ="I guess your age is: "+ json.age;
+}
+</script>
+
+
+
+<input placeholder="Name" id="name" />
+<button onclick="guessAge()">What's my age ?</button>
+<label id="result"></label>
+-->
+
+
+
+<hr>
+
+<!--Week 5.5 API-->
+<h2 id="random-quotes">Random Quotes To Brighten Your Day</h2>
+
+<p id="result" class="fancy-details">
+
+<button onclick="loadJSON()">Generate A Random Quote</button>
+
+
+<br>
+
+</p>
+
+
+
+
+
+
+
+
+
+
         </main>
 
 
@@ -182,3 +242,49 @@
 
 
 <!-- Ref 3 https://www.w3schools.com/css/css_rwd_viewport.asp-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+async function loadJSON() {
+var name = document.getElementById("name").value;
+
+const url = "https://api.freeapi.app/#/%F0%9F%93%A2%20Public%20APIs/getStocks=" + name;
+
+const response = await fetch(url);
+
+const json = await response.json();
+
+document.getElementById("result").innerHTML ="I guess your age is: "+ json.age;
+}
+-->
