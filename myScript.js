@@ -36,7 +36,10 @@ as per //As per https://www.w3schools.com/js/js_function_definition.asp*/
 const form = document.querySelector("#form-newsletter");
 
 form.addEventListener("submit", function() {
-  alert("Thanks for subscribing. Check your email for the latest newsletter. Enjoy!");
+
+var firstname = document.getElementById("firstname").value;
+
+  alert("Hi " + firstname + "! Thanks for subscribing ");
 
 
 });
@@ -50,7 +53,7 @@ form.addEventListener("submit", function() {
 /* Week 5.5 APIs 
 USE THIS SECTION FOR APIS*/
 async function loadJSON() {
-  const url = "https://api.freeapi.app/api/v1/public/quotes/quote/randoma";
+  const url = "https://api.freeapi.app/api/v1/public/quotes/quote/random";
  
 
 
@@ -66,14 +69,19 @@ try {
     }
 
   const apiQuotes = await response.json();
-  
+
+  document.getElementById("result").innerHTML="";
+
   myDisplayer("Author: " + apiQuotes.data.author  );
 myDisplayer("Quote: " + apiQuotes.data.content)
 }
 
   
   catch(err) {
-    myDisplayer(err.message);
+    //myDisplayer(err.message); //Removed this so users get an approprite message (usability)
+    document.getElementById("result").innerHTML="";
+    myDisplayer("Apologies there's an error generating random quotes, we are working 'eight days a week' to fix it!")
+
   }
 }
 
@@ -81,6 +89,7 @@ loadJSON();
 
 // Function to display any text
 function myDisplayer(text) {
+
   document.getElementById("result").innerHTML += text + "<br>";
 }
 
