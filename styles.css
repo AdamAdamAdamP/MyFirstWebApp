@@ -173,6 +173,11 @@ li:last-child {
      border-radius: 6px;
  }
 
+.blue-text{
+   color: blue;
+
+}
+
  .nav-design {
    /*  margin: 1.25rem;
      padding: 1.25rem 1.5rem;  remove as mobile version affected */

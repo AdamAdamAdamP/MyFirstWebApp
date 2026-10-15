@@ -1,4 +1,4 @@
-
+//REF XYZ - shows how to add a class to javascript using classlist.add https://stackoverflow.com/questions/507138/how-to-add-a-class-to-an-html-element-with-javascript
 
 
 //https://www.w3schools.com/js/tryit.asp?filename=tryjs_function_from_click script function and html button here
@@ -12,12 +12,20 @@
 //As per https://www.w3schools.com/js/js_function_definition.asp
 
 function changeNewsletterText() {
-document.getElementById("newsletter-discount").innerHTML = "Subscribe to receive 10% off merchandise!";
-document.getElementById("newsletter-discount").style.color = "blue";
-document.getElementById("newsletter").style.color = "blue";
+  //Removed to use jQuery
+ document.getElementById("newsletter-discount").innerHTML = "Subscribe to receive 10% off merchandise!";
+// document.getElementById("newsletter-discount").classList.add("blue-text");
+// document.getElementById("newsletter").classList.add("blue-text");
+$("#newsletter-discount").addClass("blue-text");
+$("#newsletter").addClass("blue-text");
+$("#newsletter-discount").fadeIn(2000);
+}
+
+
 //document.getElementById("newsletter").innerHTML = "Sign up for the newsletter to get 10% discount voucher for merchandise!";   THIS IS HOW TO CHANGE TEXT THATS ALREADY THERE
 
-}
+
+
 
 
 
@@ -46,10 +54,6 @@ var firstname = document.getElementById("firstname").value;
 
 
 
-
-
-
-
 /* Week 5.5 APIs 
 USE THIS SECTION FOR APIS*/
 async function loadJSON() {
@@ -70,10 +74,16 @@ try {
 
   const apiQuotes = await response.json();
 
-  document.getElementById("result").innerHTML="";
+ // document.getElementById("result").innerHTML="";     REMOVED THIS TO TEST jQUERY
+$("#result").empty(); /*added this jQuery*/
+ 
+  
 
   myDisplayer("Author: " + apiQuotes.data.author  );
-myDisplayer("Quote: " + apiQuotes.data.content)
+myDisplayer('Quote: "' + apiQuotes.data.content + '"')
+
+ 
+ 
 }
 
   

@@ -7,7 +7,7 @@
     <title>The Beatles</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -101,7 +101,7 @@
 
             <h2 id="newsletter"> Sign up to our newsletter</h2>
 
-            <p id="newsletter-discount"></p>
+            <p id="newsletter-discount" style="display:none;"></p>
             <!--p>You can call functions from events. Try the click me button to change form colour</p-->
             
             <button class="button" onclick="changeNewsletterText()">Why subscribe?</button>
@@ -196,13 +196,7 @@ document.getElementById("result").innerHTML ="I guess your age is: "+ json.age;
 <h2 id="random-quotes">All you need is love (and inspirational quotes)</h2>
 
 <button onclick="loadJSON()">Generate a random quote</button>
-<p id="result" class="fancy-details">
-
-
-
-<br>
-
-</p>
+<p id="result" class="fancy-details"><br></p>
 
 
 
