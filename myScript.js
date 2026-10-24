@@ -41,7 +41,8 @@ as per //As per https://www.w3schools.com/js/js_function_definition.asp*/
 //this is ASYNCRONOUS CALLBACK - executed at a later time allowing programm to run and essential to prevent freezing (as per w3 function callbacls)
 
 const form = document.querySelector("#form-newsletter");
-form.addEventListener("submit", function() {
+form.addEventListener("submit", function(event) {
+     event.preventDefault();
 var firstname = document.getElementById("firstname").value;
   alert("Hi " + firstname + "! Thanks for subscribing ");
 });
