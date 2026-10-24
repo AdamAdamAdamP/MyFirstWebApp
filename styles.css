@@ -173,7 +173,7 @@
     font-size: 1rem;
     border: 2px solid rgb(34, 31, 31);
     outline: none;
-    background-color: rgba(12, 12, 252, 0.5);
+    background-color: rgb(12, 12, 252);
     color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 1rem;
