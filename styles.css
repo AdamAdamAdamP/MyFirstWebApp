@@ -301,6 +301,8 @@
 
   /*forms formating https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
   input[type=text],
+   input[type=email],
+   input[type=number],
   select {
     width: 100%;
     padding: 12px;
@@ -309,8 +311,8 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-
-  input[type=email],
+/* removed this class as can be done in the same class - maybe do for more classes and keep structure same*/
+  /* input[type=email],
   select {
     width: 100%;
     padding: 12px;
@@ -318,7 +320,7 @@
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+  } */
 
   input[type=submit] {
     width: 100%;
