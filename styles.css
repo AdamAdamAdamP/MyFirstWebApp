@@ -1,76 +1,68 @@
   /* CSS box-sizing Solution - https://www.w3schools.com/css/css3_box-sizing.asp */
- /*box sizing is needed to build a grid view, making sure padding and border are taken into account with total height and width*/
- * {
-     box-sizing: border-box;
- }
+  /*box sizing is needed to build a grid view, making sure padding and border are taken into account with total height and width*/
+  * {
+    box-sizing: border-box;
+  }
+
+  /*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_12columnresponsive*/
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+    gap: 1rem;
+  }
+
+  .member-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 240, 240);
+  }
+
+  /*https://www.w3schools.com/Css/css_navbar_vertical.asp*/
 
 
- 
- /*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_12columnresponsive*/
- .container {
-     display: grid;
-     grid-template-columns: repeat(12, [col-start] 1fr);
-     gap: 1rem;
- }
+  /*Display the nav items as blocks rather than text under each other*/
+  li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
 
- nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  }
 
-/*https://www.w3schools.com/Css/css_navbar_vertical.asp*/
+  /* Change the link and background color on hover */
+  li a:hover {
 
-
-/*Display the nav items as blocks rather than text under each other*/
-li a {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-/* Change the link and background color on hover */
-li a:hover {
- 
-  background-color: rgb(100, 100, 100);
-  color: white;
-}
+    background-color: rgb(100, 100, 100);
+    color: white;
+  }
 
 
-li {
- 
-  border-bottom: 1px solid #555555;
-}
+  li {
 
-li:last-child {
-  border-bottom: none;
-}
+    border-bottom: 1px solid #555555;
+  }
 
+  li:last-child {
+    border-bottom: none;
+  }
 
-
-
-
-
-
-
+  /* Mobile first */
+  .container>* {
+    padding: 1rem;
+    grid-column: col-start / span 12;
+  }
 
 
+  /*ref for @media - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
+  /* Small devices (portrait tablets and large phones, 600px and up) */
 
-
-
-
-
-
-/* Mobile first */
-.container > * {
-  padding: 1rem;
-  grid-column: col-start / span 12;
-}
-
-/*ref for @media - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
-/*Removed as nav bar not great at the side for small devices
+  /*Removed as nav bar not great at the side for small devices
 
 @media (min-width: 600px) {
   .nav {
@@ -87,174 +79,275 @@ li:last-child {
 }
   */
 
- /* Medium devices Upwards (landscape tablets, 768px and up) */
-@media (min-width: 768px) {
-  .nav {
-    grid-column: col-start / span 2;
-    grid-row: 2 / 4;
-  }
-  .content {
-    grid-column: col-start 3 / span 10;
-    grid-row: 2 / 4;
-  }
-  
-  .footer {
-    grid-column: col-start / span 12;
-  }
-  nav ul {
-    flex-direction: column;
-  }
-}
-
- /*Adapted from https://www.w3schools.com/css/css_pseudo_classes_interactive.asp 23.09.2026 */
- /* unvisited link */
- a:link {
-     color: rgb(28, 45, 196);
- }
-
- /* visited link */
- a:visited {
-     color: rgb(209, 8, 182);
- }
-
- /* mouse over link */
- a:hover {
-     color: rgb(16, 207, 58);
- }
-
- /* selected link */
- a:active {
-     color: rgb(230, 4, 4);
- }
+  /* Medium devices Upwards (landscape tablets, 768px and up) */
 
 
 
-.button {
-  transition-duration: 0.4s;
-}
-
-.button:hover {
-  background-color:  rgb(16, 207, 58);
- 
-  color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
- .skip {
-     position: absolute;
-     left: -10000px;
-     top: auto;
-     width: 1px;
-     height: 1px;
-     overflow: hidden;
- }
-
- .skip:focus {
-     position: static;
-     width: auto;
-     height: auto;
- }
-
- .fancy-details {
-     margin: 1.25rem;
-     padding: 1.25rem 1.5rem;
-     background-color: rgb(240, 248, 255);
-     border: 2px solid rgb(209, 230, 255);
-     border-radius: 6px;
- }
-
-.blue-text{
-   color: blue;
-
-}
-
- .nav-design {
-   /*  margin: 1.25rem;
-     padding: 1.25rem 1.5rem;  remove as mobile version affected */
-     background-color: rgba(245, 245, 245,0.5);
-     border: 2px solid rgb(169, 169, 169);
-     border-radius: 6px;
- }
-
-
- body {
-     background-color: rgba(248, 248, 255, 0.5);
-     text-align: center;
-     font-family: Arial, Helvetica, sans-serif;
-     line-height: 1.5;
- }
-
-/*external stylesheet move body_ https://www.w3schools.com/css/css_howto.asp */
-
-
-
-
-/*Images https://www.w3schools.com/css/css_rwd_images.asp*/
- img {
-     max-width: 100%;
-     height: auto;
- }
-
-
- /*forms formating https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
-input[type=text], select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /* Hide element if the viewport width is 600px or less  https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_hide*/
+  @media screen and (max-width: 600px) {
+    .hide-small {
+      display: none;
+    }
   }
 
-input[type=email], select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  @media (min-width: 768px) {
+    .nav {
+      grid-column: col-start / span 3;
+      grid-row: 2 / 4;
 
-}
+    }
 
+    .decorative-image {
+      max-width: 125px;
+      width: 100%;
+      height: auto;
+    }
 
-input[type=submit] {
-  width: 100%;
-  background-color: rgb(113, 153, 228);
-  /*color: white;*/
-  padding: 14px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    .header {
+      margin: 0rem;
+      padding: 0rem;
+    }
 
-input[type=reset] {
-  width: 100%;
-  background-color: rgb(154, 154, 154);
-  /*color: white;*/
-  padding: 14px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    .content {
+      grid-column: col-start 4 / span 9;
+      grid-row: 2 / 4;
+    }
 
-input[type=submit]:hover {
-  background-color: rgb(2, 87, 245);
-  color: white
-}
+    .member-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
 
-input[type=reset]:hover {
-  background-color: rgb(50, 50, 50);
-  color: white;
-}
+    .footer {
+      grid-column: col-start / span 12;
+    }
+
+    nav ul {
+      flex-direction: column;
+    }
+  }
+
+  /*Adapted from https://www.w3schools.com/css/css_pseudo_classes_interactive.asp 23.09.2026 */
+  /* unvisited link */
+  a:link {
+    color: rgb(28, 45, 196);
+  }
+
+  /* visited link */
+  a:visited {
+    color: rgb(132, 70, 173);
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: rgb(180, 120, 63);
+
+  }
+
+  /* selected link */
+  a:active {
+    color: rgb(50, 92, 41);
+  }
+
+  .button {
+    transition-duration: 0.4s;
+    border: 2px solid rgb(209, 230, 255);
+    border-radius: 6px;
+    color: white;
+    padding: 1.25rem 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    background-color: rgb(34, 31, 31);
+    margin: 1.25rem;
+    cursor: pointer;
+  }
+
+  .top-button {
+    display: none;
+    position: fixed;
+    bottom: 1.25rem;
+    right: 2rem;
+    z-index: 99;
+    font-size: 1rem;
+    border: 2px solid rgb(34, 31, 31);
+    outline: none;
+    background-color: rgba(12, 12, 252, 0.5);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.3rem;
+  }
+
+  .top-button:hover {
+    background-color: rgb(1, 1, 212);
+    /* Add a dark-grey background on hover */
+  }
+
+  /* background-color: rgb(240, 248, 255); */
+  .button:hover {
+    background-color: rgb(38, 26, 201);
+
+    color: white;
+  }
+
+  .skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .title-bar {
+    background-color: rgb(34, 31, 31);
+    border: 2px solid rgb(172, 185, 185);
+    color: rgb(241, 243, 243);
+    border-radius: 0.5rem;
+  }
+
+  .footer-bar {
+    background-color: rgb(242, 245, 231);
+    border: 2px solid rgb(172, 185, 185);
+    color: rgb(32, 37, 37);
+    border-radius: 0.5rem;
+
+  }
+
+  h1,
+  h2 {
+    letter-spacing: 0.2rem;
+  }
+
+  hr {
+    margin: 3rem 0rem;
+    border: 2px solid rgb(171, 208, 253);
+  }
+
+  .fancy-details {
+    margin: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: rgb(240, 248, 255);
+    border: 2px solid rgb(209, 230, 255);
+    border-radius: 6px;
+  }
+
+  /* https://www.w3schools.com/colors/colors_picker.asp?colorhex=D8BFD8 - Colour chart */
+  .fancy-details-alternate {
+    margin: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: rgb(245, 239, 245);
+    border: 2px solid rgb(216, 191, 216);
+    border-radius: 6px;
+  }
+
+  .fancy-details-white {
+    margin: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(209, 230, 255);
+    border-radius: 6px;
+  }
+
+  .card-details {
+    margin: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(248, 248, 255, 0.5);
+    border: 2px solid rgb(209, 230, 255);
+    border-radius: 6px;
+  }
+
+  /* https://www.w3schools.com/csS/css3_shadows_box.asp shadow */
+  .card-image {
+    box-shadow: 0 4px 8px 0 rgba(13, 40, 114, 0.35), 0 6px 20px 0 rgba(209, 230, 255, 0.5);
+  }
+  .subscribe-text {
+    color: rgb(38, 26, 201);
+  }
+
+  .italic-text {
+    font-style: italic;
+    color: rgb(71, 75, 114);
+  }
+
+  .nav-design {
+    background-color: rgba(245, 245, 245, 0.5);
+    border: 2px solid rgb(169, 169, 169);
+    border-radius: 6px;
+  }
+
+  body {
+    background-color: rgba(248, 248, 255, 0.5);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  /*external stylesheet move body_ https://www.w3schools.com/css/css_howto.asp */
+
+  /*Images https://www.w3schools.com/css/css_rwd_images.asp*/
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*forms formating https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type=email],
+  select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: rgb(113, 153, 228);
+    /*color: white;*/
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=reset] {
+    width: 100%;
+    background-color: rgb(154, 154, 154);
+    /*color: white;*/
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: rgb(2, 87, 245);
+    color: white
+  }
+
+  input[type=reset]:hover {
+    background-color: rgb(50, 50, 50);
+    color: white;
+  }

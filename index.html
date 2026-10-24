@@ -6,279 +6,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--/*Ref 3 -w3 schools viewport*/-->
     <title>The Beatles</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-
     <div class="container">
         <header class="header" id="home">
-            <a href="#main" class="skip">Skip to the main content</a>
             <!-- /*https://www.w3schools.com/accessibility/accessibility_skip_links.php 23.09.2026*/ -->
-
-            <img src="images/beatleslogo.png" alt="The Beatles" width="200" height="200" title="The Beatles">
-            <hr>
-
-            <h1 style="font-size:2.5rem;">The Beatles</h1>
-
-            <p class="fancy-details">
-                Formed in Liverpool in 1960, The Beatles are a legendary English band.<br>
-                The band consisted of John Lennon, Paul McCartney, George Harrison and Ringo Starr.<br>
-                The Beatles achieved 18 UK number 1 singles and 15 UK number 1 albums.</p>
-            <hr>
+            <a href="#main" class="skip">Skip to the main content</a>
+            <div class="title-bar">
+                <h1>The Beatles</h1>
+            </div>
 
         </header>
 
-        <!--<hr>  has to remove as caused issue? because it was outside the <header>? -->
-
         <nav class="nav nav-design">
+            <img class="decorative-image hide-small" src="images/guitar.svg" alt="Guitar Icon" title="Guitar">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#members">Band Members</a></li>
+                <li><a href="#form-music">Find Albums</a></li>
                 <li><a href="#museum">Beatles Museum</a></li>
                 <li><a href="#newsletter">Newsletter</a></li>
-                <li><a href="#random-quotes">Inspiration</a></li>
+                <li><a href="#reference">Image References</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
 
-
-
         <main class="content" id="main">
-            <h2 id="members"> Band Members</h2>
-            <img src="images/abbeyroadcrossingcartoon.png" alt="The Beatles band members" width="200" height="200"
-                title="Abbey Road Zebra Crossing">
+            <section>
+                <!-- https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div
+                https://www.w3.org/TR/2011/WD-html5-author-20110809/the-section-element.html -->
+                <h2>The Band</h2>
+                <p class="fancy-details">
+                    Formed in Liverpool in 1960, The Beatles are a legendary English band.<br>
+                    The band consisted of John Lennon, Paul McCartney, George Harrison and Ringo Starr.<br>
+                    The Beatles achieved 18 UK number 1 singles and 15 UK number 1 albums.</p>
 
-            <h3>John Lennon</h3>
-            <p class="fancy-details">
-                Full Name: John Winston Lennon <br>
-                Born: 9th October 1940<br>
-                Died: 8th December 1980<br>
-                Instruments: Vocals, guitar, keyboard, harmonica<br>
-
-
-            </p>
-
-            <h3>Paul McCartney</h3>
-            <p class="fancy-details">
-                Full Name: James Paul McCartney <br>
-                Born: 18th June 1942<br>
-                Instruments: Vocals, bass guitar, guitar, keyboard, piano, drums<br>
-            </p>
-
-            <h3>George Harrison</h3>
-            <p class="fancy-details">
-                Full Name: George Harrison <br>
-                Born: 25th February 1943<br>
-                Died: 29th November 2001<br>
-                Instruments: Guitar, vocals, sitar, keyboard, ukulele, bass guitar<br>
-            </p>
-
-            <h3>Ringo Starr</h3>
-            <p class="fancy-details">
-                Full Name: Richard Starkey<br>
-                Born: 7th July 1940 <br>
-                Instruments: Drums, vocals<br>
-            </p>
+            </section>
 
             <hr>
 
-            <h2 id="museum">The Liverpool Beatles Museum</h2>
+            <section>
+                <h2 id="members"> Band Members</h2>
+                <div class="member-cards">
+                    <div class="fancy-details">
+                        <img class="card-image" src="images/johnsquare.jpg" alt="John Lennon" title="John Lennon">
+                        <h3>John Lennon</h3>
+                        <p class="card-details">
+                            Full Name: John Winston Lennon <br>
+                            Born: 9th October 1940<br>
+                            Died: 8th December 1980<br>
+                            Instruments: Vocals, guitar, keyboard, harmonica<br>
+                        </p>
+                    </div>
+                    <div class="fancy-details">
+                        <img class="card-image" src="images/paulsquare.jpg" alt="Paul McCartney" title="Paul McCartney">
+                        <h3>Paul McCartney</h3>
+                        <p class="card-details">
+                            Full Name: James Paul McCartney <br>
+                            Born: 18th June 1942<br>
+                            Instruments: Vocals, bass guitar, guitar, keyboard, piano, drums<br>
+                        </p>
+                    </div>
 
-            <p>If you would like more information on The Beatles, why not visit the <b>Liverpool Beatles Museum</b></p>
-            <img src="images/liverpoolbeatlesmuseum.png" alt="Liverpool Beatles Museum" width="200" height="200"
-                title="Liverpool Beatles Museum">
-
-            <p style="color: rgb(31, 67, 112); font-size:1.25rem;">Book tickets to the museum using the link below:</p>
-            <a href="https://liverpoolbeatlesmuseum.com/">Click here to visit the Liverpool Beatles
-                Museum Website</a>
-            <p><em>Book tickets in advance, to avoid missing out!</em></p>
-            <p><mark> Top tip:</mark> Don't forget to bring H<sub>2</sub>O if the weather is 15<sup>°</sup>C or more</p>
+                    <div class="fancy-details">
+                        <img class="card-image" src="images/georgesquare.jpg" alt="George Harrison"
+                            title="George Harrison">
+                        <h3>George Harrison</h3>
+                        <p class="card-details">
+                            Full Name: George Harrison <br>
+                            Born: 25th February 1943<br>
+                            Died: 29th November 2001<br>
+                            Instruments: Guitar, vocals, sitar, keyboard, ukulele, bass guitar<br>
+                        </p>
+                    </div>
+                    <div class="fancy-details">
+                        <img class="card-image" src="images/ringosquare.png" alt="Ringo Starr" title="Ringo Starr">
+                        <h3>Ringo Starr</h3>
+                        <p class="card-details">
+                            Full Name: Richard Starkey<br>
+                            Born: 7th July 1940 <br>
+                            Instruments: Drums, vocals<br>
+                        </p>
+                    </div>
+                </div>
+            </section>
 
             <hr>
-            <!--forms https://www.w3schools.com/html/html_forms.asp-->
 
-            <h2 id="newsletter"> Sign up to our newsletter</h2>
+            <!-- https://www.w3schools.com/tags/att_input_min.asp -->
+            <section>
 
-            <p id="newsletter-discount" style="display:none;"></p>
-            <!--p>You can call functions from events. Try the click me button to change form colour</p-->
-            
-            <button class="button" onclick="changeNewsletterText()">Why subscribe?</button>
+                <h2 id="quiz"> Test your Beatles knowledge</h2>
+                <div class="fancy-details">
+                    <form id="form-quiz" method="post" autocomplete="on">
 
+                        <label for="beatles-singles">How many number one UK singles do The Beatles have?:</label>
+                        <input type="number" id="beatles-singles" name="beatles-singles" min="1" max="250" required>
 
-            <!--leave action out for now action="/action_page.php" and target="_blank"  keep post as name and email are potentially PII-->
-            <form id="form-newsletter" method="post" autocomplete="on" class="fancy-details">
-    
-                    <h3> Please enter your details:</h3> 
+                        <input type="submit" value="Submit">
+                        <p id="quizAnswer"></p>
+                    </form>
+                </div>
+            </section>
 
+            <hr>
 
-                    <label for="firstname" > First Name:</label><br>
-                    <input type="text" id="firstname" name="firstname"  placeholder="e.g. John" 
-                        required>
-                    <label for="lastname"> Last Name:</label><br>
-                    <input type="text" id="lastname" name="lastname"  placeholder="e.g. Lennon"
-                        required>
+            <section>
+                <h2>Discover The Beatles</h2>
+                <div class="fancy-details">
+                    <form id="form-music" method="post" autocomplete="on">
+                        <h3>Find a Beatles Album</h3>
+                        <label for="beatles-search"> Search for albums, songs or release year</label><br>
+                        <input type="text" id="beatles-search" name="beatles-search"
+                            placeholder="e.g. Abbey Road, Yellow Submarine or 1967" required>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <p id="music-result" class="fancy-details-alternate">Go on! Try search for an album or song.<br></p>
+                </div>
+            </section>
 
-                    <label for="email">Email Address:</label><br>
-                    <input type="email" id="email" name="email" placeholder="e.g. John@gmail.com"
-                        required>
+            <hr>
 
+            <section>
+                <h2 id="museum">The Liverpool Beatles Museum</h2>
+                <div class="fancy-details">
+                    <p>If you would like more information on The Beatles, why not visit the <b>Liverpool Beatles
+                            Museum</b></p>
+                    <p style="color: rgb(31, 67, 112); font-size:1.25rem;">Book tickets to the museum using the link
+                        below:</p>
+                    <a href="https://liverpoolbeatlesmuseum.com/">Click here to visit the Liverpool Beatles Museum
+                        Website</a>
+                    <p><em>Book tickets in advance, to avoid missing out!</em></p>
+                    <div class="fancy-details-alternate">
+                        <h4>Current weather at the museum:</h4>
+                        <p id="weather-result"></p>
+                        <p><mark> Top tip:</mark> Don't forget to bring H<sub>2</sub>O if the weather is 15<sup>°</sup>C
+                            or more</p>
+                    </div>
+                    <img class="decorative-image hide-small" src="images/music.svg" alt="Musical f-sharp image"
+                        title="Abbey Road Zebra Crossing">
+                </div>
+                <!--forms https://www.w3schools.com/html/html_forms.asp-->
+            </section>
+
+            <hr>
+
+            <section>
+                <h2 id="newsletter"> Sign up to our newsletter</h2>
+                <p id="newsletter-discount" style="display:none;"></p>
+                <button class="button" onclick="changeNewsletterText()">Why subscribe?</button>
+                <form id="form-newsletter" method="post" autocomplete="on" class="fancy-details">
+                    <h3> Please enter your details:</h3>
+                    <label for="firstname"> First Name: *</label><br>
+                    <input type="text" id="firstname" name="firstname" placeholder="e.g. John" minlength="2" required>
+
+                    <label for="lastname"> Last Name: *</label><br>
+                    <input type="text" id="lastname" name="lastname" placeholder="e.g. Lennon" minlength="2" required>
+
+                    <label for="email">Email Address: *</label><br>
+                    <input type="email" id="email" name="email" placeholder="e.g. John@gmail.com" required>
+
+                    <label for="favoriteBeatle">Who is your favourite Beatle:</label><br>
+                    <select name="favoriteBeatle" id="favoriteBeatle">
+                        <option value="Select">Please select</option>
+                        <!--Quiz is optional, so 'please select' is default-->
+                        <option value="john">John </option>
+                        <option value="paul">Paul</option>
+                        <option value="george">George</option>
+                        <option value="ringo">Ringo</option>
+                    </select>
 
                     <fieldset class="fancy-details">
                         <legend> How did you hear about us?</legend>
+                        <input type="radio" id="socialMedia" name="hear_about_us" value="Social Media">
+                        <label for="socialMedia">Social Media</label><br>
 
-
-                        <input type="radio" id="facebook" name="hear_about_us" value="Social Media">
-                        <label for="facebook">Facebook</label><br>
                         <input type="radio" id="tv" name="hear_about_us" value="Television">
                         <label for="tv">Television</label><br>
+
                         <input type="radio" id="radio" name="hear_about_us" value="Radio">
                         <label for="radio">Radio</label><br>
+
                         <input type="radio" id="other" name="hear_about_us" value="Other">
                         <label for="other">Other</label><br>
                     </fieldset>
 
-
                     <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" value="Agree" required>
-                    <label for="terms_and_conditions"> I agree to the terms and conditions</label>
+                    <label for="terms_and_conditions"> I agree to the terms and conditions *</label>
 
+                    <p class="italic-text">* Required fields</p>
 
                     <input type="submit" value="Submit">
                     <input type="reset" value="Reset">
+                </form>
+            </section>
 
-             
+            <hr>
 
-
-            </form>
-
-   <!--not needed yet     <p id="newsletter-signup-message"></p> -->
-
-<!--
- <button class="button" onclick="apiTest()">
-    API Adams Testing
-</button>
--->
-
-<!--Week 5.5 API
-
-<input placeholder="Name" id="name" />
-<button onclick="guessAge()">What's my age ?</button>
-<label id="result"></label>
-
-
-<script>
-async function guessAge() {
-var name = document.getElementById("name").value;
-
-const url = "https://api.agify.io/?name=" + name;
-
-const response = await fetch(url);
-
-const json = await response.json();
-
-document.getElementById("result").innerHTML ="I guess your age is: "+ json.age;
-}
-</script>
+            <section>
+                <h2 id="reference"> Image References</h2>
+                <!-- https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html -->
+                <div class="fancy-details">
+                    <p>Please see the image attribution below </p>
+                    <small>
+                        John Lennon image: <a
+                            href="https://commons.wikimedia.org/wiki/File:John_Lennon_25_March_1969_(square_crop).jpg">Eric
+                            Koch for Anefo</a>, CC0, via Wikimedia Commons<br>
+                        Paul McCartney image: <a
+                            href="https://commons.wikimedia.org/wiki/File:Paul_McCartney_Headshot_(cropped).jpg">Eric
+                            Koch for Anefo</a>, CC0, via Wikimedia Commons<br>
+                        George Harrison image: <a
+                            href="https://commons.wikimedia.org/wiki/File:George_Harrison_1974_colorized.jpg">David Hume
+                            Kennerly</a>, Public domain, via Wikimedia Commons<br>
+                        Ringo Starr image: <a
+                            href="https://commons.wikimedia.org/wiki/File:Ringo_Starr_(square_crop).png">dearMoon</a>,
+                        <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons <br>
+                        Guitar image:
+                        <a href="https://commons.wikimedia.org/wiki/File:Guitar_-_Lorc_-_game-icons.svg">Lorc</a>,
+                        <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons <br>
+                        Music image:
+                        <a href="https://commons.wikimedia.org/wiki/File:A-major_f-sharp-minor.svg">Rettinghaus</a>,
+                        <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
+                    </small>
+                </div>
+            </section>
 
 
-
-<input placeholder="Name" id="name" />
-<button onclick="guessAge()">What's my age ?</button>
-<label id="result"></label>
--->
-
+            <img class="decorative-image hide-small" src="images/guitar.svg" alt="Guitar image"
+                title="Abbey Road Zebra Crossing">
+            <img class="decorative-image hide-small" src="images/music.svg" alt="Musical f-sharp image"
+                title="Abbey Road Zebra Crossing">
 
 
-<hr>
-
-<!--Week 5.5 API-->
-<h2 id="random-quotes">All you need is love (and inspirational quotes)</h2>
-
-<button onclick="loadJSON()">Generate a random quote</button>
-<p id="result" class="fancy-details"><br></p>
-
-
-
-
-
-
-
-
-
+            <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp back to top button -->
+            <button onclick="topFunction()" class="top-button" id="top-button" title="Go to top">Back to top</button>
 
         </main>
 
+        <div class="footer-bar">
+            <footer id="contact" class="footer" footer-bar>
+
+                <p> Contact email: queries@thebeatles-testpage.co.uk <br>
+                    Thanks for reading<br>
+                    More content coming <del>next year</del> <ins>soon</ins></p>
 
 
-        <footer class="footer">
-            <!-- Fails accessibility check but keep in for testing -->
-            <pre>
-    <small> 
-        Thanks for reading
-        
-        More content coming <del>next year</del> <ins>soon</ins>
-    </small>
-    </pre>
-
-        </footer>
-
+                <a href="#main" class="skip">Back to the main content</a>
+            </footer>
+        </div>
     </div>
 
 
-<script src="myScript.js"></script>  
-<!-- REF https://www.w3schools.com/js/js_whereto.asp    if place script in <head> it runs before page content loads, when script in <body> it runs as page loads, making things faster for users-->
+    <script src="myScript.js"></script>
+    <!-- REF https://www.w3schools.com/js/js_whereto.asp    if place script in <head> it runs before page content loads, when script in <body> it runs as page loads, making things faster for users-->
 
 </body>
 
 </html>
 
-
-
 <!-- Ref 3 https://www.w3schools.com/css/css_rwd_viewport.asp-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-async function loadJSON() {
-var name = document.getElementById("name").value;
-
-const url = "https://api.freeapi.app/#/%F0%9F%93%A2%20Public%20APIs/getStocks=" + name;
-
-const response = await fetch(url);
-
-const json = await response.json();
-
-document.getElementById("result").innerHTML ="I guess your age is: "+ json.age;
-}
--->
