@@ -43,8 +43,11 @@ as per //As per https://www.w3schools.com/js/js_function_definition.asp*/
 const form = document.querySelector("#form-newsletter");
 form.addEventListener("submit", function(event) {
      event.preventDefault();
-var firstname = document.getElementById("firstname").value;
+const firstname = document.getElementById("firstname").value;
   alert("Hi " + firstname + "! Thanks for subscribing ");
+
+  form.reset()
+  // https://stackoverflow.com/questions/3786694/how-to-reset-clear-form-through-javascript
 });
 
 
@@ -65,7 +68,7 @@ quizForm.addEventListener("submit", function(event) {
 //Quiz - https://www.w3schools.com/Js/tryit.asp?filename=tryjs_if
 
 function beatlesQuiz() {
-  var userAnswer = document.getElementById("beatles-singles").value;
+  let userAnswer = document.getElementById("beatles-singles").value;
 
 let text = "Perfect, you got it right!";
 
@@ -90,7 +93,7 @@ $("#quizAnswer").fadeIn(2000);
 const musicForm = document.querySelector("#form-music");
 musicForm.addEventListener("submit", function(event) {
   event.preventDefault()
-var search = document.getElementById("beatles-search").value;
+const search = document.getElementById("beatles-search").value;
  loadMusicJSON(search)
 });
 
@@ -123,7 +126,7 @@ try {
 
  // document.getElementById("result").innerHTML="";     REMOVED THIS TO TEST jQUERY
 $("#music-result").empty(); /*added this jQuery*/
-  myDisplayer2("<strong>Album: " + apiMusic.albums[0].title + "<strong>");
+  myDisplayer2("<strong>Album: " + apiMusic.albums[0].title + "</strong>");
   
     myDisplayer2("Release Date: " + apiMusic.albums[0].date);
 
@@ -135,10 +138,10 @@ $("#music-result").empty(); /*added this jQuery*/
 
    //https://stackoverflow.com/questions/10612667/create-html-table-from-comma-separated-strings-javascript turn string into table
  
- var tracks = apiMusic.albums[0].tracks;
+ const tracks = apiMusic.albums[0].tracks;
 
  myDisplayer2("Tracks: ");
-for (var i=0; i< tracks.length; i++) {
+for (let i=0; i< tracks.length; i++) {
     myDisplayer2(tracks[i]);
 
 }
@@ -148,7 +151,7 @@ for (var i=0; i< tracks.length; i++) {
   catch(err) {
     //myDisplayer(err.message); //Removed this so users get an approprite message (usability)
     document.getElementById("music-result").innerHTML="";
-    myDisplayer2("Apologies, there are no results found, please try again!")
+    myDisplayer2("Apologies, no results found. Please try again!")
 console.error(err);
   }
 }

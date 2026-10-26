@@ -172,8 +172,8 @@
     z-index: 99;
     font-size: 1rem;
     border: 2px solid rgb(34, 31, 31);
-    outline: none;
-    background-color: rgb(12, 12, 252);
+    /* outline: none; removed for accessibiluty*/
+    background-color: rgb(99, 133, 153);
     color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 1rem;
@@ -182,7 +182,7 @@
 
   .top-button:hover {
     background-color: rgb(1, 1, 212);
-    /* Add a dark-grey background on hover */
+   
   }
 
   /* background-color: rgb(240, 248, 255); */
@@ -222,11 +222,16 @@
 
   } */
 
-  h1,
-  h2 {
+  h1 {
     letter-spacing: 0.2rem;
   }
 
+  h2 {
+    letter-spacing: 0.1rem;
+  }
+
+
+  
   hr {
     margin: 3rem 0rem;
     border: 2px solid rgb(171, 208, 253);
