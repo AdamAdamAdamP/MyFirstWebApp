@@ -159,7 +159,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    background-color: rgb(34, 31, 31);
+    background-color: rgb(61, 101, 124);
     margin: 1.25rem;
     cursor: pointer;
   }
@@ -293,7 +293,7 @@
 
   /*external stylesheet move body_ https://www.w3schools.com/css/css_howto.asp */
 
-  /*Images https://www.w3schools.com/css/css_rwd_images.asp*/
+  /*Images https://www.w3schools.com/css/css_rwd_images.asp */
   img {
     max-width: 100%;
     height: auto;
