@@ -159,8 +159,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    /* background-color: rgb(99, 133, 153); */
-    background-color: black;
+    background-color: rgb(99, 133, 153);
     margin: 1.25rem;
     cursor: pointer;
   }
