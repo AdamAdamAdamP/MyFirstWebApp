@@ -1,227 +1,156 @@
-//REF XYZ - shows how to add a class to javascript using classlist.add https://stackoverflow.com/questions/507138/how-to-add-a-class-to-an-html-element-with-javascript
 
+//NEWSLETTER: Why subscribe 
 
-//https://www.w3schools.com/js/tryit.asp?filename=tryjs_function_from_click script function and html button here
-//
-//https://www.w3schools.com/js/tryit.asp?filename=tryjs_change_style
-//https://www.w3schools.com/js/tryit.asp?filename=tryjs_change_innerhtml change inner html i.e. discount 
-
-
-// This is a Function Declaration because its reusable
-//Declared functions are not executed immediately. They are "saved for later use", and will be executed later, when they are invoked (called upon).
-//As per https://www.w3schools.com/js/js_function_definition.asp
+//Button logic: https://www.w3schools.com/js/tryit.asp?filename=tryjs_function_from_click  
+//Change text logic: https://www.w3schools.com/js/tryit.asp?filename=tryjs_change_innerhtml 
+//Function logic: https://www.w3schools.com/js/js_function_definition.asp
 
 function changeNewsletterText() {
-  //Removed to use jQuery
- document.getElementById("newsletter-discount").innerHTML = "Subscribe to receive 10% off merchandise!";
-// document.getElementById("newsletter-discount").classList.add("blue-text");
-// document.getElementById("newsletter").classList.add("blue-text");
-$("#newsletter-discount").addClass("subscribe-text");
-$("#newsletter").addClass("subscribe-text");
-$("#newsletter-discount").fadeIn(2000);
+
+  document.getElementById("newsletter-discount").innerHTML = "Subscribe to receive 10% off merchandise!";
+
+  $("#newsletter-discount").addClass("subscribe-text");
+  $("#newsletter").addClass("subscribe-text");
+  $("#newsletter-discount").fadeIn(2000);
 }
 
 
-//document.getElementById("newsletter").innerHTML = "Sign up for the newsletter to get 10% discount voucher for merchandise!";   THIS IS HOW TO CHANGE TEXT THATS ALREADY THERE
+//NEWSLETTER: Personalised greeting upon clicking submit
 
-
-
-
-
-//https://www.w3schools.com/js/tryit.asp?filename=tryjs_htmlfirst_script ref for submitting form with alert
-
-// this is Function Expression (Anonymous) 
-/*A function expression stores a function inside a variable.
-
-The function can be anonymous (without a name).
-
-Function expressions are executed only when the code reaches them.
-as per //As per https://www.w3schools.com/js/js_function_definition.asp*/
-
-//this is ASYNCRONOUS CALLBACK - executed at a later time allowing programm to run and essential to prevent freezing (as per w3 function callbacls)
+//Alert logic: https://www.w3schools.com/js/tryit.asp?filename=tryjs_htmlfirst_script  
+//Clear form after submit logic: https://stackoverflow.com/questions/3786694/how-to-reset-clear-form-through-javascript
 
 const form = document.querySelector("#form-newsletter");
-form.addEventListener("submit", function(event) {
-     event.preventDefault();
-const firstname = document.getElementById("firstname").value;
+
+form.addEventListener("submit", function (event) {
+
+  event.preventDefault();
+  const firstname = document.getElementById("firstname").value;
   alert("Hi " + firstname + "! Thanks for subscribing ");
 
-  form.reset()
-  // https://stackoverflow.com/questions/3786694/how-to-reset-clear-form-through-javascript
+  form.reset();
+
 });
 
 
+//QUIZ
 
-
-
-
-
-// https://www.geeksforgeeks.org/javascript/preventdefault-event-method/
-
-
+//Prevent default logic: https://www.geeksforgeeks.org/javascript/preventdefault-event-method/
+//If logic - https://www.w3schools.com/Js/tryit.asp?filename=tryjs_if
 const quizForm = document.querySelector("#form-quiz");
-quizForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    beatlesQuiz()
-});
 
-//Quiz - https://www.w3schools.com/Js/tryit.asp?filename=tryjs_if
+quizForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  beatlesQuiz();
+});
 
 function beatlesQuiz() {
   let userAnswer = document.getElementById("beatles-singles").value;
 
-let text = "Perfect, you got it right!";
+  let text = "Perfect, you got it right!";
 
-if (userAnswer > 18) {
-  text = "Wrong go lower!";
-}
+  if (userAnswer > 18) {
+    text = "Wrong go lower!";
+  }
 
-if (userAnswer < 18) {
-  text = "Wrong go higher!";
-}
+  if (userAnswer < 18) {
+    text = "Wrong go higher!";
+  }
 
-
-document.getElementById("quizAnswer").innerHTML = text;
+  document.getElementById("quizAnswer").innerHTML = text;
   $("#quizAnswer").hide();
-$("#quizAnswer").fadeIn(2000);
+  $("#quizAnswer").fadeIn(2000);
 }
 
 
-// music API
-
+// MUSIC API
 
 const musicForm = document.querySelector("#form-music");
-musicForm.addEventListener("submit", function(event) {
-  event.preventDefault()
-const search = document.getElementById("beatles-search").value;
- loadMusicJSON(search)
+
+musicForm.addEventListener("submit", function (event) {
+
+  event.preventDefault();
+  const search = document.getElementById("beatles-search").value;
+  loadMusicJSON(search);
 });
 
-
-
-
-
-
-/* Week 5.5 APIs 
-MUSIC API URL
-https://www.theaudiodb.com/free_music_api
-https://www.theaudiodb.com/docs_json
-USE THIS SECTION FOR APIS*/
 async function loadMusicJSON(search) {
- /*Use for the space inbetween the beatles https://stackoverflow.com/questions/5442658/spaces-in-urls*/
-  const url = "https://www.rotaryspin.com/mc/api/beatles.php?query="+search;
+  const url = "https://www.rotaryspin.com/mc/api/beatles.php?query=" + search;
 
-       
-  //OLD "https://www.theaudiodb.com/api/v1/json/123/search.php?s=beatles";
- 
-/*try catches errors for errors https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_fetch_array_try*/
-try {
+  /*Error logic: https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_fetch_array_try */
+  try {
+
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error("HTTP error " + response.status);
     }
-  const apiMusic = await response.json();
 
+    const apiMusic = await response.json();
 
+    $("#music-result").empty();
+    displayMusic("<strong>Album: " + apiMusic.albums[0].title + "</strong>");
+    displayMusic("Release Date: " + apiMusic.albums[0].date);
 
- // document.getElementById("result").innerHTML="";     REMOVED THIS TO TEST jQUERY
-$("#music-result").empty(); /*added this jQuery*/
-  myDisplayer2("<strong>Album: " + apiMusic.albums[0].title + "</strong>");
-  
-    myDisplayer2("Release Date: " + apiMusic.albums[0].date);
+    //Loop through songs logic: https://stackoverflow.com/questions/10612667/create-html-table-from-comma-separated-strings-javascript 
+    const tracks = apiMusic.albums[0].tracks;
 
+    displayMusic("Tracks: ");
+    for (let i = 0; i < tracks.length; i++) {
+      displayMusic(tracks[i]);
+    }
+  }
 
-    
- 
-  //  myDisplayer2("Tracks: " + apiMusic.albums[0].tracks);
-
-
-   //https://stackoverflow.com/questions/10612667/create-html-table-from-comma-separated-strings-javascript turn string into table
- 
- const tracks = apiMusic.albums[0].tracks;
-
- myDisplayer2("Tracks: ");
-for (let i=0; i< tracks.length; i++) {
-    myDisplayer2(tracks[i]);
-
-}
-
-}
-  
-  catch(err) {
-    //myDisplayer(err.message); //Removed this so users get an approprite message (usability)
-    document.getElementById("music-result").innerHTML="";
-    myDisplayer2("Apologies, no results found. Please try again!")
-console.error(err);
+  catch (err) {
+    document.getElementById("music-result").innerHTML = "";
+    displayMusic("Apologies, no results found. Please try again!")  
   }
 }
 
-
-// Function to display any text
-function myDisplayer2(text) {
+function displayMusic(text) {
   document.getElementById("music-result").innerHTML += text + "<br>";
 }
 
 
-
-
-
-
-/* NEW WEATHER API TEST */
-
-
+//WEATHER API
 
 async function loadWeatherJSON() {
   const url = "https://api.open-meteo.com/v1/forecast?latitude=53.40&longitude=-2.99&current=temperature_2m,wind_speed_10m&timezone=Europe/London";
  
-//try catches errors for errors https://www.w3schools.com/js/tryit.asp?filename=tryjs_json_fetch_array_try
-try {
+  try {
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error("HTTP error " + response.status);
     }
-  const apiWeather = await response.json();
+    const apiWeather = await response.json();
 
-  console.log(apiWeather)
+    console.log(apiWeather)
 
-  const weatherTime = new Date(apiWeather.current.time);
-  let formatDate = weatherTime.toLocaleString();
- // document.getElementById("result").innerHTML="";     REMOVED THIS TO TEST jQUERY
-//$("#result").empty(); /*added this jQuery*/
+    const weatherTime = new Date(apiWeather.current.time);
+    let formatDate = weatherTime.toLocaleString();
 
- 
-  myDisplayer3("Temperature: " + apiWeather.current.temperature_2m + "°C"  );
-myDisplayer3("Wind Speed: " + apiWeather.current.wind_speed_10m +" km/h" )
-myDisplayer3("Weather recorded at: " + formatDate);
-}
-  
-  catch(err) {
-    //myDisplayer(err.message); //Removed this so users get an approprite message (usability)
-    document.getElementById("weather-result").innerHTML="";
-    myDisplayer3("Apologies there's an error generating random quotes, we are working 'eight days a week' to fix it!")
+    displayWeather("Temperature: " + apiWeather.current.temperature_2m + "°C");
+    displayWeather("Wind Speed: " + apiWeather.current.wind_speed_10m + " km/h")
+    displayWeather("Weather recorded at: " + formatDate);
+  }
 
+  catch (err) {
+    document.getElementById("weather-result").innerHTML = "";
+    displayWeather("Apologies, there's an error generating the weather forecast. Please check later.")
   }
 }
-
 loadWeatherJSON();
-// Function to display any text
-function myDisplayer3(text) {
+
+function displayWeather(text) {
   document.getElementById("weather-result").innerHTML += text + "<br>";
 }
 
+//TOP BUTTON
+//Back to the top button logic: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 
-
-
-
-
-
-
-
-// Get the button
 let mybutton = document.getElementById("top-button");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+ 
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -231,7 +160,6 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -245,23 +173,3 @@ function topFunction() {
 
 
 
-
-//   const myPara = document.getElementById("newsletter-signup-message")
-// myPara.innerHTML = "hello world";
-
-
-
-//Greeting https://www.w3schools.com/js/js_if_else.asp
-
-// const time = new Date().getHours();
-// let greeting;
-// if (time < 5) {
-//   greeting = "Good evening";
-// } else if (time < 12) {
-//   greeting = "Good morning";
-//   } else if (time < 18) {
-//   greeting = "Good afternoon";
-// } else {
-//   greeting = "Good evening";
-// }
-// document.getElementById("demo").innerHTML = greeting;

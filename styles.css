@@ -1,10 +1,9 @@
-  /* CSS box-sizing Solution - https://www.w3schools.com/css/css3_box-sizing.asp */
-  /*box sizing is needed to build a grid view, making sure padding and border are taken into account with total height and width*/
+ /* CSS box-sizing logic: https://www.w3schools.com/css/css3_box-sizing.asp */
   * {
     box-sizing: border-box;
   }
 
-  /*https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_12columnresponsive*/
+  /*Grid logic: https://www.w3schools.com/css/css_grid_12column.asp */
   .container {
     display: grid;
     grid-template-columns: repeat(12, [col-start] 1fr);
@@ -24,27 +23,21 @@
     background-color: rgb(240, 240, 240);
   }
 
-  /*https://www.w3schools.com/Css/css_navbar_vertical.asp*/
+  /*Vertical Nav Bar logic: https://www.w3schools.com/Css/css_navbar_vertical.asp */
 
-
-  /*Display the nav items as blocks rather than text under each other*/
   li a {
     display: block;
     padding: 1rem;
     text-decoration: none;
-
   }
 
-  /* Change the link and background color on hover */
   li a:hover {
-
     background-color: rgb(100, 100, 100);
     color: white;
   }
 
 
   li {
-
     border-bottom: 1px solid #555555;
   }
 
@@ -52,38 +45,14 @@
     border-bottom: none;
   }
 
-  /* Mobile first */
+
   .container>* {
     padding: 1rem;
     grid-column: col-start / span 12;
   }
 
-
-  /*ref for @media - https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-
-  /*Removed as nav bar not great at the side for small devices
-
-@media (min-width: 600px) {
-  .nav {
-    grid-column: col-start / span 2;
-   
-  }
-  .content {
-    grid-column: col-start 3 / span 10;
-
-  }
-  .footer {
-    grid-column: col-start / span 12;
-  }
-}
-  */
-
-  /* Medium devices Upwards (landscape tablets, 768px and up) */
-
-
-
-  /* Hide element if the viewport width is 600px or less  https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_hide*/
+  /*Media query logic: https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+  /* Hide element logic:  https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_hide */
   @media screen and (max-width: 600px) {
     .hide-small {
       display: none;
@@ -94,13 +63,6 @@
     .nav {
       grid-column: col-start / span 3;
       grid-row: 2 / 4;
-
-    }
-
-    .decorative-image {
-      max-width: 125px;
-      width: 100%;
-      height: auto;
     }
 
     .header {
@@ -128,24 +90,20 @@
     }
   }
 
-  /*Adapted from https://www.w3schools.com/css/css_pseudo_classes_interactive.asp 23.09.2026 */
+  /*Pseudo class logic: https://www.w3schools.com/css/css_pseudo_classes_interactive.asp */
   /* unvisited link */
   a:link {
     color: rgb(28, 45, 196);
   }
 
-  /* visited link */
   a:visited {
     color: rgb(132, 70, 173);
   }
 
-  /* mouse over link */
   a:hover {
     color: rgb(180, 120, 63);
-
   }
 
-  /* selected link */
   a:active {
     color: rgb(50, 92, 41);
   }
@@ -172,7 +130,6 @@
     z-index: 99;
     font-size: 1rem;
     border: 2px solid rgb(34, 31, 31);
-    /* outline: none; removed for accessibiluty*/
     background-color: rgb(99, 133, 153);
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -182,10 +139,9 @@
 
   .top-button:hover {
     background-color: rgb(1, 1, 212);
-   
+
   }
 
-  /* background-color: rgb(240, 248, 255); */
   .button:hover {
     background-color: rgb(38, 26, 201);
 
@@ -207,20 +163,13 @@
     height: auto;
   }
 
-  .title-bar  ,  .footer-bar{
+  .title-bar,
+  .footer-bar {
     background-color: rgb(34, 31, 31);
     border: 2px solid rgb(172, 185, 185);
     color: rgb(241, 243, 243);
     border-radius: 0.5rem;
   }
-
-  /* .footer-bar {
-    background-color: rgb(242, 245, 231);
-    border: 2px solid rgb(172, 185, 185);
-    color: rgb(32, 37, 37);
-    border-radius: 0.5rem;
-
-  } */
 
   h1 {
     letter-spacing: 0.2rem;
@@ -230,8 +179,6 @@
     letter-spacing: 0.1rem;
   }
 
-
-  
   hr {
     margin: 3rem 0rem;
     border: 2px solid rgb(171, 208, 253);
@@ -245,7 +192,7 @@
     border-radius: 6px;
   }
 
-  /* https://www.w3schools.com/colors/colors_picker.asp?colorhex=D8BFD8 - Colour chart */
+  /*Colour charts: https://www.w3schools.com/colors/colors_picker.asp?colorhex=D8BFD8 */
   .fancy-details-alternate {
     margin: 1.25rem;
     padding: 1.25rem 1.5rem;
@@ -270,10 +217,11 @@
     border-radius: 6px;
   }
 
-  /* https://www.w3schools.com/csS/css3_shadows_box.asp shadow */
+  /*Shadow logic: https://www.w3schools.com/csS/css3_shadows_box.asp */
   .card-image {
     box-shadow: 0 4px 8px 0 rgba(13, 40, 114, 0.35), 0 6px 20px 0 rgba(209, 230, 255, 0.5);
   }
+
   .subscribe-text {
     color: rgb(38, 26, 201);
   }
@@ -296,19 +244,23 @@
     line-height: 1.5;
   }
 
-  /*external stylesheet move body_ https://www.w3schools.com/css/css_howto.asp */
-
-  /*Images https://www.w3schools.com/css/css_rwd_images.asp */
+  /*Images logic: https://www.w3schools.com/css/css_rwd_images.asp */
   img {
     max-width: 100%;
     height: auto;
   }
 
-  /*forms formating https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
-  /*Multiple classes for same CSS https://www.tutorialspoint.com/article/how-to-apply-styles-to-multiple-classes-at-once*/
+  .decorative-image {
+    max-width: 125px;
+    width: 100%;
+    height: auto;
+  }
+
+  /*Forms formatting logic: https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
+  /*Multiple CSS Class logic: https://www.tutorialspoint.com/article/how-to-apply-styles-to-multiple-classes-at-once */
   input[type=text],
-   input[type=email],
-   input[type=number],
+  input[type=email],
+  input[type=number],
   select {
     width: 100%;
     padding: 12px;
@@ -317,16 +269,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-/* removed this class as can be done in the same class - maybe do for more classes and keep structure same*/
-  /* input[type=email],
-  select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
 
   input[type=submit] {
     width: 100%;
@@ -352,10 +294,14 @@
 
   input[type=submit]:hover {
     background-color: rgb(2, 87, 245);
-    color: white
+    color: white;
   }
 
   input[type=reset]:hover {
     background-color: rgb(50, 50, 50);
     color: white;
   }
+
+
+
+  

@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--/*Ref 3 -w3 schools viewport*/-->
+    <!--Viewport logic:  https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Beatles</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -12,7 +13,7 @@
 <body>
     <div class="container">
         <header class="header" id="home">
-            <!-- /*https://www.w3schools.com/accessibility/accessibility_skip_links.php 23.09.2026*/ -->
+            <!--Skip Link Logic: https://www.w3schools.com/accessibility/accessibility_skip_links.php -->
             <a href="#main" class="skip">Skip to the main content</a>
             <div class="title-bar">
                 <h1>The Beatles</h1>
@@ -35,8 +36,9 @@
 
         <main class="content" id="main">
             <section>
-                <!-- https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div
-                https://www.w3.org/TR/2011/WD-html5-author-20110809/the-section-element.html -->
+                <!-- Beatles information from: https://en.wikipedia.org/wiki/The_Beatles-->
+                <!-- Section element logic: https://stackoverflow.com/questions/6939864/what-is-the-difference-between-section-and-div -->
+                <!-- Section element logic 2: https://www.w3.org/TR/2011/WD-html5-author-20110809/the-section-element.html -->
                 <h2>The Band</h2>
                 <p class="fancy-details">
                     Formed in Liverpool in 1960, The Beatles are a legendary English band.<br>
@@ -104,7 +106,7 @@
 
             <hr>
 
-            <!-- https://www.w3schools.com/tags/att_input_min.asp -->
+            <!--Min and Max logic: https://www.w3schools.com/tags/att_input_min.asp -->
             <section>
 
                 <h2 id="quiz"> Test Your Beatles Knowledge</h2>
@@ -137,8 +139,6 @@
                 </div>
             </section>
 
-
-
             <hr>
 
             <section>
@@ -159,12 +159,13 @@
                     </div>
                     <img class="decorative-image hide-small" src="images/music.svg" alt="">
                 </div>
-                <!--forms https://www.w3schools.com/html/html_forms.asp-->
+
             </section>
 
             <hr>
 
             <section>
+                <!--Form logic: https://www.w3schools.com/html/html_forms.asp -->
                 <h2 id="newsletter"> Sign Up To Our Newsletter</h2>
                 <p id="newsletter-discount" style="display:none;"></p>
                 <button class="button" onclick="changeNewsletterText()">Why subscribe?</button>
@@ -204,7 +205,6 @@
                         <label for="other">Other</label><br>
                     </fieldset>
 
-                    <!-- https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/ Checkbox uses space not enter according to W3C-->
                     <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" value="Agree" required>
                     <label for="terms_and_conditions"> I agree to the terms and conditions *</label>
 
@@ -219,7 +219,7 @@
 
             <section>
                 <h2 id="reference"> Image Attribution</h2>
-                <!-- https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html -->
+                <!--Image attribute in HTML logic: https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html -->
                 <div class="fancy-details">
                     <p>Please see the image attribution below </p>
                     <small>
@@ -250,30 +250,26 @@
             <img class="decorative-image hide-small" src="images/music.svg" alt="">
 
 
-            <!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp back to top button -->
+            <!--Back to top button logic:  https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
             <button onclick="topFunction()" class="top-button" id="top-button" title="Go to top">Back to top</button>
 
         </main>
 
-        <div class="footer-bar">
-            <footer id="contact" class="footer" footer-bar>
 
-                <p> Contact email: queries@thebeatles-testpage.co.uk <br>
-                    Thanks for reading<br>
-                    More content coming <del>next year</del> <ins>soon</ins></p>
+        <footer id="contact" class="footer footer-bar">
 
+            <p> Contact email: queries@thebeatles-testpage.co.uk <br>
+                Thanks for reading<br>
+                More content coming <del>next year</del> <ins>soon</ins></p>
 
-                <a href="#main" class="skip">Back to the main content</a>
-            </footer>
-        </div>
+            <a href="#main" class="skip">Back to the main content</a>
+        </footer>
+
     </div>
 
-
     <script src="myScript.js"></script>
-    <!-- REF https://www.w3schools.com/js/js_whereto.asp    if place script in <head> it runs before page content loads, when script in <body> it runs as page loads, making things faster for users-->
+    <!--JavaScript location logic: REF https://www.w3schools.com/js/js_whereto.asp -->
 
 </body>
 
 </html>
-
-<!-- Ref 3 https://www.w3schools.com/css/css_rwd_viewport.asp-->
